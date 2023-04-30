@@ -1,5 +1,7 @@
 # Alpha Shop
 
+![image](https://github.com/melody8503/Alpha_Shop/blob/main/src/assets/images/alpha_shop.png)
+
 使用 React 框架實作購物網站頁面
 
 ## Installation and execution 安裝與執行
