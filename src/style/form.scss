@@ -1,0 +1,37 @@
+@use "sass:math";
+@import 'style/base';
+
+@mixin input-width($prefix, $division) {
+  $form-full-width: 540;
+
+  @for $index from 1 to ($division + 1) {
+    .#{$prefix}-#{$index} {
+      width: 100% * math.div($index * 65 + ($index - 1) * 30, $form-full-width);
+    }
+  }
+}
+
+
+@media screen and (min-width: $screen-break-point) {
+  @include input-width('input-w-lg', 6);
+}
+
+@media screen and (max-width: $screen-break-point) {
+  $mobile-form-full-width: 346;
+
+  .input-w-sm-s1 {
+    width: math.div(100% * 133, $mobile-form-full-width);
+  }
+
+  .input-w-sm-s2 {
+    width: math.div(100% * 183, $mobile-form-full-width);
+  }
+
+  .input-w-sm-s3 {
+    width: math.div(100% * 158, $mobile-form-full-width);
+  }
+
+  .input-w-sm-full {
+    width: 100%;
+  }
+}
