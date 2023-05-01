@@ -2,9 +2,9 @@ import product1 from 'assets/images/product-1.jpg'
 import product2 from 'assets/images/product-2.jpg'
 import { ReactComponent as Minus} from 'assets/icons/minus.svg'
 import { ReactComponent as Plus} from 'assets/icons/plus.svg'
-import styles from './product.module.scss'
+import styles from 'components/Main/Cart/cartProduct.module.scss'
 
-const Step2 = () => {
+const Product = () => {
   return(
     <section className={`${styles.product__list} col col-12`} data-total-price="0">
       <div className={`${styles.product__container} col col-12`} data-count="0" data-price="3999">
@@ -39,4 +39,4 @@ const Step2 = () => {
   )
 }
 
-export default Step2
+export default Product

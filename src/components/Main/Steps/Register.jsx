@@ -1,6 +1,6 @@
-import styles from './stepProgress.module.scss'
-import StepProgress from './StepProgress'
-import Form from './Form'
+import styles from 'components/Main/Steps/stepProgress.module.scss'
+import StepProgress from 'components/Main/Steps/StepProgress'
+import Form from 'components/Main/Steps/Form'
 
 
 const Register = () => {

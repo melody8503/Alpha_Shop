@@ -1,11 +1,11 @@
-import styles from './cart.module.scss'
-import Product from './Product'
+import styles from 'components/Main/Cart/cart.module.scss'
+import CardProduct from 'components/Main/Cart/CartProduct'
 
-const Step2 = () => {
+const Cart = () => {
   return(
     <section className={`${styles.cart__container} col col-lg-5 col-sm-12`}>
       <h3 className={styles.cart__title}>購物籃</h3>
-        <Product />
+        <CardProduct />
       <section className={`${styles.cart__info} shipping col col-12`}>
         <div className={styles.cart__text}>運費</div>
         <div className={styles.cart__price}>免費</div>
@@ -18,5 +18,5 @@ const Step2 = () => {
   )
 }
 
-export default Step2
+export default Cart
           

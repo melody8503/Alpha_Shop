@@ -1,7 +1,7 @@
-import styles from './Main.module.scss'
-import Register from './Main/Steps/Register'
-import Cart from './Main/Cart/Cart'
-import ProgressControl from './Main/Steps/ProgressControl'
+import styles from 'components/Main.module.scss'
+import Register from 'components/Main/Steps/Register'
+import Cart from 'components/Main/Cart/Cart'
+import ProgressControl from 'components/Main/Steps/ProgressControl'
 
 const Main = () => {
   return(

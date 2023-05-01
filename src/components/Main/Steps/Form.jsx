@@ -1,4 +1,4 @@
-import styles from './steps.module.scss'
+import styles from 'components/Main/Steps/steps.module.scss'
 
 import Step1 from './Step1'
 // import Step2 from './Step2'

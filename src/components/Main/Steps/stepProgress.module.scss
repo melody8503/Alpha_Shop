@@ -1,5 +1,5 @@
 @import 'style/base';
-@import './steps.module';
+@import 'components/Main/Steps/steps.module';
 
 $phase-map: (
   1: 'address',

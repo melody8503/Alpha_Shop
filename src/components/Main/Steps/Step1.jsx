@@ -1,4 +1,4 @@
-import styles from './steps.module.scss'
+import styles from 'components/Main/Steps/steps.module.scss'
 
 const cities = [
   { id: '請選擇縣市', name: '請選擇縣市'},

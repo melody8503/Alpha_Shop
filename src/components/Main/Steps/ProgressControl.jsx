@@ -1,6 +1,6 @@
 import { ReactComponent as RightArrow} from 'assets/icons/right-arrow.svg'
 import { ReactComponent as LeftArrow} from 'assets/icons/right-arrow.svg'
-import styles from './stepProgress.module.scss'
+import styles from 'components/Main/Steps/stepProgress.module.scss'
 
 const Step1 = () => {
   return(

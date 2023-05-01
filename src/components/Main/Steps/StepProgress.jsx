@@ -1,5 +1,5 @@
 import { ReactComponent as CheckedIcon} from 'assets/icons/pg-complete.svg'
-import styles from './stepProgress.module.scss'
+import styles from 'components/Main/Steps/stepProgress.module.scss'
 
 const Step = ({phase, number, label}) => {
   return(
