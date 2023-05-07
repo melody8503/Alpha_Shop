@@ -4,39 +4,56 @@ import { ReactComponent as Minus} from 'assets/icons/minus.svg'
 import { ReactComponent as Plus} from 'assets/icons/plus.svg'
 import styles from 'components/Main/Cart/cartProduct.module.scss'
 
-const Product = () => {
+const productData = [
+  {
+    id: 1,
+    img: product1,
+    name:'破壞補丁修身牛仔褲',
+    price: 3999,
+    quantity: 1
+  },
+  {
+    id: 2,
+    img: product2,
+    name: '刷色直筒牛仔褲',
+    price: 1299,
+    quantity: 1
+  }
+]
+
+// 千分位分隔符號
+const formatPrice = ( number =>
+  number.toLocaleString('en-US')
+)
+
+const ProductList = ({id, img, name, price, quantity}) => {
+  return (
+    <div className={`${styles.product__container} col col-12`} data-count={quantity} data-price={price} key={id}>
+      <img className={styles.img__container} src={img} alt={name} />
+      <div className={styles.product__info}>
+        <div className={styles.product__name}>{name}</div>
+        <div className={styles.product__control__container}>
+          <div className={styles.product__control}>
+            <Minus />
+            <span className={styles.product__count}>{quantity}</span>
+            <Plus />
+          </div>
+        </div>
+        <div className={styles.product__price}>${formatPrice(price)}</div>
+      </div>
+    </div>
+  )
+}
+
+const CartProduct = () => {
   return(
-    <section className={`${styles.product__list} col col-12`} data-total-price="0">
-      <div className={`${styles.product__container} col col-12`} data-count="0" data-price="3999">
-        <img className={styles.img__container} src={product1} alt="Product1" />
-        <div className={styles.product__info}>
-          <div className={styles.product__name}>破壞補丁修身牛仔褲</div>
-          <div className={styles.product__control__container}>
-            <div className={styles.product__control}>
-              <Minus />
-              <span className={styles.product__count}>1</span>
-              <Plus />
-            </div>
-          </div>
-          <div className={styles.product__price}>$3,999</div>
-        </div>
-      </div>
-      <div className={`${styles.product__container} col col-12`} data-count="0" data-price="1299">
-        <img className={styles.img__container} src={product2} alt="Product2" />
-        <div className={styles.product__info}>
-          <div className={styles.product__name}>刷色直筒牛仔褲</div>
-          <div className={styles.product__control__container}>
-            <div className={styles.product__control}>
-              <Minus />
-              <span className="product__count">1</span>
-              <Plus />
-            </div>
-          </div>
-          <div className={styles.product__price}>$1,299</div>
-        </div>
-      </div>
+    <section className={`${styles.product__list} col col-12`} data-total-price="0"> 
+      {productData.map( product =>
+        <ProductList {...product} key={product.id} />
+        )  
+      }
     </section>
   )
 }
 
-export default Product
+export default CartProduct

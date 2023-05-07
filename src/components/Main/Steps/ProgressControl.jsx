@@ -2,7 +2,7 @@ import { ReactComponent as RightArrow} from 'assets/icons/right-arrow.svg'
 import { ReactComponent as LeftArrow} from 'assets/icons/right-arrow.svg'
 import styles from 'components/Main/Steps/stepProgress.module.scss'
 
-const Step1 = () => {
+const ProgressControl = () => {
   return(
     <section className={`${styles.progress__control__container} col col-lg-6 col-sm-12`}>
       <section className={`${styles.button__group} col col-12`} data-phase="address">
@@ -34,4 +34,4 @@ const Step1 = () => {
   )
 }
 
-export default Step1
+export default ProgressControl
