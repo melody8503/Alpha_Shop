@@ -4,6 +4,11 @@
 
 使用 React 框架實作購物網站頁面
 
+## Features 功能
+
+- 點擊結帳頁面下方的按鈕瀏覽表單流程
+- 點擊購物車的 + 和 - 鍵來增減商品數量，並查看總金額
+
 ## Installation and execution 安裝與執行
 
 1. 請先確認安裝 Node.js 與 npm

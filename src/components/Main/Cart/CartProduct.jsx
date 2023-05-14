@@ -23,11 +23,6 @@ const productData = [
 ]
 
 
-// 千分位分隔符號
-const formatPrice = ( number =>
-  number.toLocaleString('en-US')
-)
-
 const ProductList = ({id, img, name, price, totalAmount, setTotalAmount}) => {
 
   // 更新總金額
@@ -68,7 +63,7 @@ const ProductList = ({id, img, name, price, totalAmount, setTotalAmount}) => {
             <Plus className="cursor-point" onClick={handleAddClick} />
           </div>
         </div>
-        <div className={styles.product__price}>${formatPrice(price)}</div>
+        <div className={styles.product__price}>${price.toLocaleString('en-US')}</div>
       </div>
     </div>
   )
