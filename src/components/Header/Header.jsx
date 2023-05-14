@@ -12,7 +12,7 @@ const Header = () => {
       <div className={`${styles.header__container} mx-auto`}>
 
         <input id={styles.navbar__toggle} className={styles.navbar__toggle} type="checkbox" />
-        <label for={styles.navbar__toggle} className={styles.burger__container}>
+        <label htmlFor={styles.navbar__toggle} className={styles.burger__container}>
           <Toggle className={`${styles.icon__toggle} cursor-point`} />
         </label>
 
