@@ -30,7 +30,9 @@ const formatPrice = ( number =>
 
 const ProductList = ({id, img, name, price, totalAmount, setTotalAmount}) => {
 
+  // 更新總金額
   const updateProductTotal = (price) => {
+    // 判斷當前總金額+商品價錢來更新
     if ((totalAmount + price) >= 0) {
       setTotalAmount(totalAmount + price)
     } else {
@@ -38,9 +40,10 @@ const ProductList = ({id, img, name, price, totalAmount, setTotalAmount}) => {
     }
   }
 
-  // 商品數量  
+  // 商品數量狀態  
   const [count, setCount] = useState(0)
 
+  // 透過數量增減，傳入商品價錢更新總金額
   const handleAddClick = () => {
     setCount(count + 1)
     updateProductTotal(price)
@@ -72,7 +75,6 @@ const ProductList = ({id, img, name, price, totalAmount, setTotalAmount}) => {
 }
 
 const CartProduct = ({totalAmount, setTotalAmount}) => {
-
   return(
     <section className={`${styles.product__list} col col-12`} data-total-price={"0"}> 
       {productData.map( product =>

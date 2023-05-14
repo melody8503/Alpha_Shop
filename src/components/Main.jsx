@@ -5,15 +5,16 @@ import ProgressControl from 'components/Main/Steps/ProgressControl'
 import styles from 'components/Main.module.scss'
 
 const Main = () => {
-  // StepProgress 步驟
+  // 步驟狀態
   const [currentStep, setCurrentStep] = useState(1)
 
+  // 下一頁
   const handleNextClick = () => {
     if (currentStep < 3) {
       setCurrentStep(currentStep + 1)
     }
   }
-
+  // 上一頁
   const handlePreClick = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1)
@@ -27,8 +28,8 @@ const Main = () => {
         <Cart />
         <ProgressControl 
           currentStep={currentStep} 
-          onNextClick={handleNextClick}
-          onPreClick={handlePreClick}
+          handleNextClick={handleNextClick}
+          handlePreClick={handlePreClick}
         />
       </div>
     </main>

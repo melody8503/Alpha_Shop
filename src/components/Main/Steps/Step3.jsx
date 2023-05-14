@@ -1,6 +1,6 @@
 import styles from 'components/Main/Steps/steps.module.scss'
 
-const Step2 = () => {
+const Step3 = () => {
   return(
     <form className="col col-12" data-phase="credit-card">
       <h3 className={styles.form__title}>付款資訊</h3>
@@ -32,4 +32,4 @@ const Step2 = () => {
   )
 }
 
-export default Step2
+export default Step3

@@ -7,7 +7,6 @@ const Step = ({currentStep, phase, number, label}) => {
       <span className={styles.progress__icon}>
         <span className={styles.progress__text}>
           {currentStep > number ? <CheckedIcon className={`${styles.checked__icon} cursor-point`} /> : number}
-        
         </span>
       </span>
       <span className={styles.progress__label}>{label}</span>

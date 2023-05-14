@@ -7,9 +7,9 @@ import Step3 from './Step3'
 const Form = ({currentStep}) => {
   return(
     <section className={`${styles.form__container} col col-12`}>
-      <Step1 />
-      <Step2 />
-      <Step3 />
+      {currentStep === 1 && <Step1 />}
+      {currentStep === 2 && <Step2 />}
+      {currentStep === 3 && <Step3 />}
     </section>
   )
 }
