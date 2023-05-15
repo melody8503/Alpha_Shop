@@ -23,7 +23,7 @@ const productData = [
 ]
 
 
-const ProductList = ({id, img, name, price, totalAmount, setTotalAmount}) => {
+const ProductList = ({id, img, name, price, totalAmount, setTotalAmount, priceFormat}) => {
 
   // 更新總金額
   const updateProductTotal = (price) => {
@@ -63,17 +63,17 @@ const ProductList = ({id, img, name, price, totalAmount, setTotalAmount}) => {
             <Plus className="cursor-point" onClick={handleAddClick} />
           </div>
         </div>
-        <div className={styles.product__price}>${price.toLocaleString('en-US')}</div>
+        <div className={styles.product__price}>${priceFormat(price)}</div>
       </div>
     </div>
   )
 }
 
-const CartProduct = ({totalAmount, setTotalAmount}) => {
+const CartProduct = ({totalAmount, setTotalAmount, priceFormat}) => {
   return(
     <section className={`${styles.product__list} col col-12`} data-total-price={"0"}> 
       {productData.map( product =>
-        <ProductList {...product} key={product.id} totalAmount={totalAmount} setTotalAmount={setTotalAmount} />
+        <ProductList {...product} key={product.id} totalAmount={totalAmount} setTotalAmount={setTotalAmount} priceFormat={priceFormat} />
         ) 
       }
     </section>

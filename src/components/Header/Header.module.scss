@@ -22,7 +22,7 @@ header.site__header {
     position: relative;
     max-width: 1100px;
     height: var(--header-height);
-    background-color: inherit;
+    background-color: var(--background-color);
     align-items: stretch;
   }
 }
