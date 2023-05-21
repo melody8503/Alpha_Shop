@@ -8,4 +8,4 @@ const cartPayInit = {
   totalAmount: 0
 }
 
-export const CartPayContext = createContext(cartPayInit);
+export const CartPayContext = createContext(cartPayInit)

@@ -19,5 +19,5 @@ const productData = [
   }
 ]
 
-export const CartContext = createContext(productData);
+export const CartContext = createContext(productData)
 
