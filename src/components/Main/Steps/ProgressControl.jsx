@@ -20,7 +20,15 @@ const PreStep = ({handlePreClick}) => {
   )
 }
 
-const ProgressControl = ({currentStep, handleNextClick, handlePreClick}) => {
+const ConfirmButton = ({handleSubmit}) => {
+  return (
+    <button className={`${styles.button__next} cursor-point`} onClick={handleSubmit}>
+      確認下單
+    </button>
+  )
+}
+
+const ProgressControl = ({currentStep, handleNextClick, handlePreClick, handleSubmit}) => {
   return(
     <section className={`${styles.progress__control__container} col col-lg-6 col-sm-12`}>
       {currentStep === 1 && (
@@ -39,9 +47,7 @@ const ProgressControl = ({currentStep, handleNextClick, handlePreClick}) => {
       {currentStep === 3 && (
         <section className={`${styles.button__group} col col-12`} data-phase="credit-card">
           <PreStep handlePreClick={handlePreClick} />
-          <button className={`${styles.button__next} cursor-point`}>
-            確認下單
-          </button>
+          <ConfirmButton handleSubmit={handleSubmit} />
         </section>
       )}
     </section>

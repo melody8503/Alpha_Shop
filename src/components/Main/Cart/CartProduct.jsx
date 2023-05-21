@@ -4,13 +4,19 @@ import { ReactComponent as Minus} from 'assets/icons/minus.svg'
 import { ReactComponent as Plus} from 'assets/icons/plus.svg'
 import styles from 'components/Main/Cart/cartProduct.module.scss'
 
-const ProductList = ({id, img, name, price, totalAmount, setTotalAmount, priceFormat}) => {
+const ProductList = ({id, img, name, price, totalAmount, setTotalAmount, priceFormat, cartPayInfo, setCartPayInfo}) => {
 
   // 更新總金額
   const updateProductTotal = (price) => {
     // 判斷當前總金額+商品價錢來更新
     if ((totalAmount + price) >= 0) {
       setTotalAmount(totalAmount + price)
+
+      setCartPayInfo({
+        ...cartPayInfo,
+        totalAmount: totalAmount + price
+      })
+
     } else {
       return setTotalAmount(0)
     }
@@ -50,13 +56,14 @@ const ProductList = ({id, img, name, price, totalAmount, setTotalAmount, priceFo
   )
 }
 
-const CartProduct = ({totalAmount, setTotalAmount, priceFormat}) => {
-  const productData = useContext(CartContext);
+const CartProduct = ({totalAmount, setTotalAmount, priceFormat, cartPayInfo, setCartPayInfo}) => {
+  const productData = useContext(CartContext)
+
   return(
     <section className={`${styles.product__list} col col-12`} data-total-price={"0"}>
       <CartContext.Provider value={productData}>
         {productData.map( product =>
-          <ProductList {...product} key={product.id} totalAmount={totalAmount} setTotalAmount={setTotalAmount} priceFormat={priceFormat} />
+          <ProductList {...product} key={product.id} totalAmount={totalAmount} setTotalAmount={setTotalAmount} priceFormat={priceFormat} cartPayInfo={cartPayInfo} setCartPayInfo={setCartPayInfo} />
           ) 
         }
       </CartContext.Provider>
